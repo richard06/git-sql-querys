@@ -1,3 +1,5 @@
+--Ejercicios de Querys para SQL Server probados con AZURE SQL SERVER
+
 --Crear base de datos
 IF NOT EXISTS (
    SELECT name
@@ -78,6 +80,9 @@ GO
 ALTER TABLE dbo.Producto
 ALTER COLUMN stock int NOT NULL;
 
+
+--DOS FORMAS DE INSERT 
+--1.-
 --select * from dbo.Producto;
 
 INSERT INTO dbo.Producto
@@ -93,7 +98,7 @@ SELECT N'Panales',340,50,8 UNION ALL
 SELECT N'baterias',1234,5,1
 GO
 
-
+-- 2.- Esta  es la forma corta
 
 INSERT INTO dbo.Clientes
      ([ClienteId],[Nombre],[Direccion],[Email])
@@ -109,7 +114,7 @@ select c.* From Clientes As c
 ORDER BY Nombre;
 
 
-
+--Cambiar el TIPO de dato de la columna email
 ALTER TABLE dbo.Clientes
 ALTER COLUMN email [NVARCHAR](50) NULL;
 
